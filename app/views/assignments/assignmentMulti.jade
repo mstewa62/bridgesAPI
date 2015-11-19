@@ -33,16 +33,38 @@ block content
                         label(for='private') Private
                         a.btn.btn-primary
 
+
+
                 div
                     button(class='optionButton', id='resize')
                                 label Resize view
 
                     button(class='optionButton', id='reset')
                                 label Reset view
+                    button(class='optionButton', id='switch view')
+                                label Switch view
+
+                div(style='margin:10px 10px 10px 10px;')
+                    label Time Controls
+                    div(style='margin-left:25%')
+
+                        button(class='timeButton', id='firstFrame')
+                            label <<
+                        button(class='timeButton', id='prevFrame')
+                            label <
+                        button(class='timeButton', id='pause')
+                            label ||
+                        button(class='timeButton', id='nextFrame')
+                            label >
+                        button(class='timeButton', id='lastFrame')
+                            label >>
 
                 div
                     a.btn.btn-primary(class="optionButton", id="saveButton" onclick="snapImage()")
                             label(for="saveButton") Snapshoot
+
+
+
         -}
 
         table.full
@@ -62,7 +84,7 @@ block content
                 td.right
                     div(id="vis" + i, class="vis", display="block").assignmentContainer
 
-        -}
+        -}  
 
 block footerjs
 

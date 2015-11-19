@@ -12,15 +12,20 @@ block css
 block content
     include ../includes/header.jade
     script(type='application/ecmascript' async='' src='/js/dropzone.js')
-    .container
+    .container 
         .row
             .col-lg-6
 
-                div(style="float:left; margin-left:50px")
+                div(style="float:left; margin-left:50px;")
                     //a(href="/assignments/"+assignments[0].assignmentID+"/"+usernames)
-                    h1(style="text-align: left") #{usernames}'s Gallery
-                    
-    div(style='margin:5%')
+                    h1(style="text-align: right") #{usernames}'s Gallery
+    
+    div(style="height:500px; background-color:LightBlue")
+
+      if (assignments.length <= 0)
+                p(style="color:Gray; text-align: center; font-size: 250%; font-weight: bold; padding-top:100px") Looks like there aren't any assignments here...    :(
+        - else
+
         - for (var x = 0; x < assignments.length; x++)
             div(style="float:left;width:120px; margin-left:50px")
                 a(href='/assignments/'+assignments[x].assignmentNumber+'/'+usernames)
